@@ -42,7 +42,6 @@ The pipeline follows a Medallion Architecture, moving data through three stages:
 
 ## Setup & Requirements
 
-> This project was built as part of a university assignment. 
 > The pipeline runs on GCP you'll need the following to replicate it:
 
 **Infrastructure**
