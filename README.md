@@ -39,3 +39,30 @@ The pipeline follows a Medallion Architecture, moving data through three stages:
 | `airflow_dag.py` | Combined Airflow ingestion DAG |
 | `part_1.sql` / `part_4.sql` | SQL queries |
 | `report.pdf` | Full project report |
+
+## Setup & Requirements
+
+> This project was built as part of a university assignment. 
+> The pipeline runs on GCP you'll need the following to replicate it:
+
+**Infrastructure**
+- Google Cloud Platform account (Cloud Composer, Cloud SQL, GCS)
+- dbt Cloud account connected to your PostgreSQL instance
+
+**Local Tools**
+- Python 3.8+
+- Apache Airflow 2.x
+- DBeaver (for querying PostgreSQL)
+
+**Python Dependencies**
+```bash
+pip install apache-airflow
+pip install apache-airflow-providers-google
+pip install psycopg2-binary
+pip install pandas
+```
+
+**To run the pipeline**
+1. Upload CSV files to your GCS bucket
+2. Trigger the Airflow DAG manually
+3. Run `dbt build` in dbt Cloud after each monthly load
